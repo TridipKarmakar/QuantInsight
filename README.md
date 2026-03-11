@@ -148,3 +148,57 @@ quantinsight
 - Explore probability-based insights about market movements.
 - Simulate potential future price scenarios using Monte Carlo methods.
 - Support data-driven stock evaluation for investors and learners.
+
+## Statistical Models
+
+QuantInsight currently implements core statistical and probability models including:
+
+- Mean, Variance, Standard Deviation
+- Covariance and Correlation
+- Binomial Distribution
+- Poisson Distribution
+- Geometric Distribution
+- Uniform Distribution
+- Monte Carlo Simulation
+
+Future versions may include additional statistical and quantitative models.
+
+
+## Project Deliverables
+
+The QuantInsight project aims to deliver the following components in the initial release:
+
+- **Market Data Integration** – Retrieve real-time and historical stock market data through financial APIs.
+- **Data Processing Pipeline** – Clean and transform raw market data for analysis.
+- **Statistical Analysis Engine** – Compute key indicators such as mean, variance, standard deviation, covariance, and correlation.
+- **Probability Modeling Module** – Apply probability distributions including Binomial, Poisson, Geometric, and Uniform models.
+- **Monte Carlo Simulation Engine** – Generate possible future market scenarios based on historical statistics.
+- **Interactive Web Dashboard** – Visualize insights through charts and analytical dashboards.
+- **Project Documentation** – Provide structured documentation for system architecture, models, and workflows.
+- **Version-Controlled Repository** – Maintain source code and development history through GitLab.
+
+
+## Project Success Criteria
+
+The QuantInsight project will be considered successful when the following objectives are achieved:
+
+- **Reliable Market Data Integration**  
+  The system successfully retrieves and processes financial market data through external APIs.
+
+- **Accurate Statistical Computation**  
+  The platform correctly computes statistical indicators such as mean, variance, standard deviation, covariance, and correlation.
+
+- **Implementation of Probability Models**  
+  Core probability distributions including Binomial, Poisson, Geometric, and Uniform models are implemented and functioning correctly.
+
+- **Monte Carlo Simulation Capability**  
+  The platform can generate multiple simulated market scenarios based on historical statistical parameters.
+
+- **Functional Interactive Dashboard**  
+  Users can visualize market data, statistical metrics, and probability insights through a web-based dashboard.
+
+- **Structured and Maintainable Codebase**  
+  The project code is organized, version-controlled, and documented to support future development.
+
+- **Extensible Analytical Framework**  
+  The system architecture supports the addition of new statistical models and analytical methods in future updates.
