@@ -29,3 +29,4 @@ The processed data and analytical results are presented through an interactive d
 ### 7. Stock Evaluation
 
 Users can analyze multiple stocks using the platform’s statistical and probabilistic insights to better understand potential opportunities and risks before making investment decisions.
+
