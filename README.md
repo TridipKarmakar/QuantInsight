@@ -140,3 +140,11 @@ quantinsight
 - Feature branches are used for development
 - Commits reference issue IDs for traceability
 - Merge requests are used before integrating code
+
+## Business Use Cases
+
+- Evaluate stock risk using statistical indicators such as variance and standard deviation.
+- Analyze relationships between stocks using correlation analysis.
+- Explore probability-based insights about market movements.
+- Simulate potential future price scenarios using Monte Carlo methods.
+- Support data-driven stock evaluation for investors and learners.
