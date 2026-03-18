@@ -27,4 +27,13 @@ def fetch_stock_data(symbol):
     if response.status_code != 200 :
         raise Exception("API request dailed")
 
-    return response.json()
+   
+    data = response.json() 
+    
+    if "Error Message" in data:
+        raise Exception("Invalid API call")
+
+    if "Note" in data:
+        raise Exception("API rate limit exceeded")
+
+    return data 
