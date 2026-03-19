@@ -12,6 +12,32 @@ def parse_stock_data(data) :
     return data["Time Series (Daily)"]
 
 
+def validated_data(df) :
+    """
+    Validated stock data
+    """
+
+    print("\n --- Data Info ---")
+    print(df.info())
+
+    print("\n --- Summary Statistics ---")
+    describe_data = df.describe()
+    describe_data = describe_data.astype(float).round(2)
+    describe_data["Volume"] =  describe_data["Volume"].astype(int)
+    print(describe_data)
+
+    print("\n --- Missing Value found ---")
+    print(df.isnull().sum())
+
+    #Logical Checks
+
+    if df.isnull().sum().sum() > 0 :
+        raise Exception("Missing values found")
+    
+    print("\n Data validation successful ✅")
+
+
+
 
 
 if __name__ == "__main__" : #only run when explicitly run by the name main.py
@@ -35,15 +61,16 @@ if __name__ == "__main__" : #only run when explicitly run by the name main.py
 
         time_series_data_frame.index = pd.to_datetime(time_series_data_frame.index)
 
+
         time_series_data_frame = time_series_data_frame.sort_index(ascending=False)
         time_series_data_frame.reset_index(inplace=True)
         time_series_data_frame.rename(columns={"index":"Date"},inplace=True)
         time_series_data_frame = time_series_data_frame.set_index("Date")
-
+        
         
         print("Parsing successfully ✅")
         print(time_series_data_frame[:5])
-
+        validated_data(time_series_data_frame)
     except Exception as e:
         print("Error:", e)
     
