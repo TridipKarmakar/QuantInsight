@@ -14,6 +14,16 @@ def parse_stock_data(data) :
 
 
 
+
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__" : #only run when explicitly run by the name main.py
 
     symbol = "AAPL" # for now fixed th symbol name lateron change from the browser
@@ -31,7 +41,8 @@ if __name__ == "__main__" : #only run when explicitly run by the name main.py
             "4. close" :"Close"  ,
             "5. volume" : "Volume" })
 
-        time_series_data_frame = time_series_data_frame.astype(float)
+        time_series_data_frame = time_series_data_frame.astype({"Open":float,"High":float,"Low":float,"Close":float,"Volume":int}).round(2)
+
         time_series_data_frame.index = pd.to_datetime(time_series_data_frame.index)
 
         time_series_data_frame = time_series_data_frame.sort_index(ascending=False)
