@@ -39,7 +39,7 @@ if __name__ == "__main__" : #only run when explicitly run by the name main.py
         time_series_data_frame.rename(columns={"index":"Date"},inplace=True)
         time_series_data_frame = time_series_data_frame.set_index("Date")
 
-
+        
         print("Parsing successfully ✅")
         print(time_series_data_frame[:5])
 
