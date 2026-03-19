@@ -14,16 +14,6 @@ def parse_stock_data(data) :
 
 
 
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__" : #only run when explicitly run by the name main.py
 
     symbol = "AAPL" # for now fixed th symbol name lateron change from the browser
