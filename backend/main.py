@@ -1,7 +1,6 @@
 from api.market_data import fetch_stock_data
 from processing.validation import validated_data
 from processing.cleaning import time_serise_analysis_dataset
-
 from processing.feature_engineering import time_serise_feature_engineering
 
 import pandas as pd
@@ -32,7 +31,7 @@ if __name__ == "__main__" : #only run when explicitly run by the name main.py
        
         time_series_data_frame = time_serise_analysis_dataset(time_series_data_frame)  # execute the cleaning process
 
-        time_series_data_frame = time_serise_feature_engineering(time_series_data_frame)  # execute the feature engineering process
+        time_series_data_frame = time_serise_feature_engineering(time_series_data_frame)  # create analysis data 
 
         print("Parsing successfully ✅")
         print(time_series_data_frame[:10])
