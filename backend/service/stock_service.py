@@ -18,7 +18,7 @@ def get_stock_analysis(symbol) :
      stats = compute_all_statistics(time_series_data_frame)  #Extract the stats out of it 
 
      return {
-          "symbol" : symbol ,
+          "symbAAPLol" : symbol ,
           "stats" : stats,
           "Data Sets": time_series_data_frame[:10].to_dict(orient="index") , #return only the first 10 records for now
           
