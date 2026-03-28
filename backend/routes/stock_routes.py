@@ -1,10 +1,10 @@
 from fastapi import APIRouter
-from service.stock_service import get_stock_analysis
+from service.refresh_service import refresh_stock_data
 
 
 router = APIRouter()
 
-@router.get("/stock/{symbol}")
+@router.get("/refresh/{symbol}")
 
-def get_stock(symbol:str) :
-    return get_stock_analysis(symbol)
+def refresh(symbol:str) :
+    return refresh_stock_data(symbol)
