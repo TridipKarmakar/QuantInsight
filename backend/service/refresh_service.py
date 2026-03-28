@@ -65,15 +65,16 @@ def refresh_stock_data(symbol) :
     if time_series_data_frame.empty :
         return {"message": "Already up to date"}
     
+    else :
     # Step 8 - Transform
 
-    records = transform_to_mogo_format(symbol,time_series_data_frame)
+        records = transform_to_mogo_format(symbol,time_series_data_frame)
 
     # Step 9 - Save
 
-    save_stock_data(collection, records)
+        save_stock_data(collection, records)
 
-    return {"message" : f"{len(records)} recods inserted"}
+        return {"message" : f"{len(records)} recods inserted"}
     
 
 
