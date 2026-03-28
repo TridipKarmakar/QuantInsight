@@ -15,3 +15,6 @@ db = client["quant_insignt"]
 collection = db["stock_data"]
 
 print("MongoDB Altaas connected successfully !")
+
+
+
