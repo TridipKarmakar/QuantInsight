@@ -7,10 +7,10 @@ def get_stock_dataframe(collection, symbol) :
         return None
     df = pd.DataFrame(data)
 
-    df["date"] = pd.to_datetime(df["data"])
+    df["date"] = pd.to_datetime(df["date"])
     df = df.sort_values("date")
 
-    df.set_index("data", inplace=True)
+    df.set_index("date", inplace=True)
 
     return df
 
