@@ -22,6 +22,7 @@ def fetch_stock_data(symbol):
         "apikey" : API_KEY 
     }
 
+
     response = requests.get(BASE_URL, params=params)
     
     if response.status_code != 200 :
