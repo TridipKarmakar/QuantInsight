@@ -1,10 +1,18 @@
 def transform_to_mogo_format(symbol, df) :
     records= []
 
+    
     for Date, rows in df.iterrows() :
+    
+        if isinstance(Date, str):
+            formatted_date = Date.split(" ")[0]
+
+        else :
+            formatted_date = Date.strftime("%Y-%m-%d")
+
         records.append({
             "symbol" :symbol,
-            "date": Date.strftime("%Y-%m-%d"),
+            "date": formatted_date,
             "open" : float(rows["open"]),
             "high" : float(rows["high"]),
             "low" : float(rows["low"]),
