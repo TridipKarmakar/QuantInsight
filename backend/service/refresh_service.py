@@ -15,24 +15,6 @@ from processing.transform import transform_to_mogo_format
 
 
 
-# def get_stock_analysis(symbol) :
-
-#      data = fetch_stock_data(symbol)  #get the overall stock data
-#      time_series = parse_stock_data(data) #get the time series data
-#      time_series_data_frame = convert_to_df(time_series) #convert to the dataframe
-#      time_series_data_frame = time_serise_analysis_dataset(time_series_data_frame)
-#      time_series_data_frame = time_serise_feature_engineering(time_series_data_frame)  # create analysis data
-#      validated_data(time_series_data_frame) #validate the data
-#      stats = compute_all_statistics(time_series_data_frame)  #Extract the stats out of it 
-
-#      return {
-#           "symbol" : symbol ,
-#           "stats" : stats,
-#           "Data Sets": time_series_data_frame[:10].to_dict(orient="index") , #return only the first 10 records for now
-          
-#      }
-
-
 def refresh_stock_data(symbol) :
     
     print(f"Refeshing {symbol}...")
