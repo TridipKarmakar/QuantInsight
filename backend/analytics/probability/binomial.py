@@ -5,6 +5,6 @@ def compute_binomial(returns):
     p = success / total 
 
     return {
-        "prob_up" : str(round(p * 100, 2)) + " %" ,
-        "prob_down" :  ((1 - p).astype(float) * 100).round(2).astype(str) + " %"
+        "prob_up" : round(p.astype(float) , 3) ,
+        "prob_down" :  round((1 - p).astype(float),3)
     }
