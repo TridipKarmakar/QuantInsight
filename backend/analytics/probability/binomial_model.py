@@ -1,4 +1,4 @@
-from probability.binomial import compute_binomial
+from analytics.probability.binomial import compute_binomial
 import math
 
 def binomial_probability(n, k, p):
