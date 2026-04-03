@@ -7,6 +7,7 @@ from analytics.probability.binomial_model import binomial_probability
 from analytics.probability.poisson import compute_lambda
 from analytics.probability.poisson_probability import poission_probability
 from analytics.probability.geometric import geometric_probability, expected_waiting_time
+from analytics.probability.uniform import compute_uniform_distribution, uniform_probability
 
 
 
@@ -47,15 +48,27 @@ def get_stock_analysis_from_db(symbol) :
         "exoected_days_for_gain" : expected_waiting_time(p),
     }
 
+    uniform_data = compute_uniform_distribution(df)
+
+    min_r = uniform_data["min_return"]
+    max_r = uniform_data["max_return"]
+
+    uniform = {
+        "range" : uniform_data,
+        "prob_0_to_2_percentage": round(uniform_probability(0, 0.02, min_r, max_r),2)
+
+    }
 
 
     return {
+
         "symbol" : symbol,
         "stats" : stats,
         "insights" : insights,
         "probability" : probability,
         "binomial" : binomial,
         "poission -2%" : poission,
-        "geometric" : geometric
+        "geometric" : geometric,
+        "uniform" : uniform
 
     }
