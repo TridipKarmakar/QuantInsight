@@ -6,6 +6,7 @@ from analytics.insight_engine import generate_basic_insights
 from analytics.probability.binomial_model import binomial_probability
 from analytics.probability.poisson import compute_lambda
 from analytics.probability.poisson_probability import poission_probability
+from analytics.probability.geometric import geometric_probability, expected_waiting_time
 
 
 
@@ -37,11 +38,24 @@ def get_stock_analysis_from_db(symbol) :
     }
 
 
+    p = probability["prob_up"]
+
+    geometric = {
+        "prob_1_day" : round(geometric_probability(1, p),2),
+        "prob_2_day" : round(geometric_probability(2, p),2),
+        "prob_3_day" : round(geometric_probability(3, p),2),
+        "exoected_days_for_gain" : expected_waiting_time(p),
+    }
+
+
+
     return {
         "symbol" : symbol,
         "stats" : stats,
         "insights" : insights,
         "probability" : probability,
         "binomial" : binomial,
-        "poission -2%" : poission
+        "poission -2%" : poission,
+        "geometric" : geometric
+
     }
