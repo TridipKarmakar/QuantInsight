@@ -1,3 +1,5 @@
+import numpy as np
+
 from database.mongo import collection
 from database.read_data import get_stock_dataframe
 from analytics.statistics_engine import compute_all_statistics
@@ -8,6 +10,7 @@ from analytics.probability.poisson import compute_lambda
 from analytics.probability.poisson_probability import poission_probability
 from analytics.probability.geometric import geometric_probability, expected_waiting_time
 from analytics.probability.uniform import compute_uniform_distribution, uniform_probability
+from analytics.monte_carlo_simulation.mote_carlo_simulation_analysis import monte_carlo__simulaiton
 
 
 
@@ -60,6 +63,27 @@ def get_stock_analysis_from_db(symbol) :
     }
 
 
+
+    # Monte carlo 10,000 simulation
+    simulaitons = monte_carlo__simulaiton(df,num_simulations=10000)
+
+    final_prices = [path[-1] for path in simulaitons]
+
+    monte_carlo = {
+        "mean_price" : round(np.mean(final_prices),2),
+        "mediun_price" : round(np.median(final_prices),2),
+        "min_price" : round(np.min(final_prices),2),
+        "max_price" : round(np.max(final_prices),2),
+        "percentiles" : {
+            "5%" : round(np.percentile(final_prices,5),2),
+            "25%" : round(np.percentile(final_prices,25),2),
+            "75%" : round(np.percentile(final_prices,75),2),
+            "95%" : round(np.percentile(final_prices,95),2)
+
+
+        }
+    }
+
     return {
 
         "symbol" : symbol,
@@ -69,6 +93,7 @@ def get_stock_analysis_from_db(symbol) :
         "binomial" : binomial,
         "poission -2%" : poission,
         "geometric" : geometric,
-        "uniform" : uniform
+        "uniform" : uniform,
+        "monte carlo" : monte_carlo
 
     }
