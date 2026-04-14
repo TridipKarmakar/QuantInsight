@@ -35,8 +35,15 @@ def fetch_stock_data(symbol):
 
    
     data = response.json() 
-    print("API DATA KEYS:", data.keys())
     
+    if "Time Series (Daily)" not in data:
+        print("API LIMIT OR ERROR:", data)
+        return {
+            "status": "error",
+            "message": "API limit reached",
+            "data": data
+        }
+
     if "Error Message" in data:
         raise Exception("Invalid API call")
 
