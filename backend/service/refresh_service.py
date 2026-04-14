@@ -54,6 +54,7 @@ def refresh_stock_data(symbol) :
 
     # Step 9 - Save
 
+        
         save_stock_data(collection, records)
 
         return {"message" : f"{len(records)} recods inserted"}

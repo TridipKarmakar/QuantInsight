@@ -28,12 +28,14 @@ def fetch_stock_data(symbol):
     
 
     response = requests.get(BASE_URL, params=params)
+    print("API KEY", API_KEY)
     
     if response.status_code != 200 :
         raise Exception("API request dailed")
 
    
     data = response.json() 
+    print("API DATA KEYS:", data.keys())
     
     if "Error Message" in data:
         raise Exception("Invalid API call")
