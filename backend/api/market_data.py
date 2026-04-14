@@ -12,6 +12,7 @@ BASE_URL = "https://www.alphavantage.co/query" #base url for api
 
 def fetch_stock_data(symbol):
     
+
     """
     Fetch daily stock data from Alpha API
     """
@@ -23,6 +24,8 @@ def fetch_stock_data(symbol):
         "apikey" : API_KEY 
     }
 
+    print("API KEY", API_KEY)
+    
 
     response = requests.get(BASE_URL, params=params)
     
