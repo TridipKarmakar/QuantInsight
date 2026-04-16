@@ -2,6 +2,7 @@ import { Input } from "@/components/ui/input.jsx"
 import { Button } from "@/components/ui/button.jsx" 
 import { useState }  from 'react'
 
+
 export default function HeaderSection({ onSearch, currentSymbol }) {
     const [symbol, setSymbol] = useState("")
 
@@ -28,17 +29,7 @@ export default function HeaderSection({ onSearch, currentSymbol }) {
             
             <div className="flex items-center gap-2">
 
-                <Input
-                    placeholder = "Search symbol..."
-                    value= {symbol}
-                    onChange={(e) => setSymbol(e.target.value)}
-                    className="w-64"
-                />
-
-                <Button onClick={handleSearch}>
-                    Analyze
-                </Button>
-
+                
 
             </div>
         </div>
