@@ -1,7 +1,10 @@
 
 import { useState } from "react";
+import TopNavbar from "../layouts/TopNavbar.jsx";
 import HeaderSection from "../components/overview/HeaderSection";
 import StatsSection from "../components/overview/StatsSection";
+
+
 
 export default function Overview() {
 
@@ -16,9 +19,12 @@ export default function Overview() {
 
 
   return  (
-      
-        <div className="p-6 space-y-6 bg-gray-50 min-h-screen">
-          
+      <div className="min-h-screen bg-gray-50"> 
+        {/*  Navbar */}
+        <TopNavbar onSearch={fetchData}/>
+        
+        <div className="p-6 space-y-6 bg-gray-50">
+
           {/*  Header */}
           <HeaderSection onSearch={fetchData} currentSymbol={data?.symbol}/>
           
@@ -34,7 +40,7 @@ export default function Overview() {
           
         </div>
           
-
+      </div>
       
   )
 }
