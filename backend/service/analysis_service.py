@@ -21,6 +21,9 @@ def get_stock_analysis_from_db(symbol) :
     if df is None:
         return {"error" : "No data found"}
     
+    current_price = df["close"].iloc[-1]
+    today_return = df["pct_change"].iloc[-1]
+
     stats = compute_all_statistics(df)
 
     insights = generate_basic_insights(stats)
@@ -87,6 +90,8 @@ def get_stock_analysis_from_db(symbol) :
     return {
 
         "symbol" : symbol,
+        "current_price" : current_price,
+        "today_return" : today_return,
         "stats" : stats,
         "insights" : insights,
         "probability" : probability,
