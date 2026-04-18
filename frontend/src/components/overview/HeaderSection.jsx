@@ -1,16 +1,15 @@
-
-import { useState }  from 'react'
-
+// import { ArrowUpRightCircle }  from "iconoir-react";
+import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 
 export default function HeaderSection({ data, currentSymbol }) {
 
     const price = data?.current_price || 0
     const todayReturn = data?.today_return || 0
-    
+    const isPositive = todayReturn >= 0
 
     return(
 
-        <div className="flex items-center justify-between border-b pb-4">
+        <div className="flex items-center justify-between border-b pu-10 pb-10">
        
         {/*Left*/}
         
@@ -23,7 +22,7 @@ export default function HeaderSection({ data, currentSymbol }) {
                 </p>
             </div>
             
-            {/*Right*/}
+        {/*Right*/}
             
             <div className="text-right">
 
@@ -32,11 +31,13 @@ export default function HeaderSection({ data, currentSymbol }) {
                      $ {price.toLocaleString()}
                 </h2>
               
-                {/* Today Return */}
+                {/* Today Return */}                
                 
-                <p>
-                    <span>{}</span>
-                    <span></span>
+                <p className={`mt-1 text-md font-medium flex items-center justify-end gap-1 ${isPositive ? "text-green-600" : "text-red-500"}`}>
+
+                    {isPositive ? (<ArrowUpRight/>):(<ArrowDownRight />)}
+                    <span>{isPositive ? "+":"-"}{todayReturn.toFixed(2)}%</span>
+                    <span>Today</span>
 
                 </p>
 
