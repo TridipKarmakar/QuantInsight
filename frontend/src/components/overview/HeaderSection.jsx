@@ -1,24 +1,22 @@
-import { Input } from "@/components/ui/input.jsx" 
-import { Button } from "@/components/ui/button.jsx" 
+
 import { useState }  from 'react'
 
 
-export default function HeaderSection({ onSearch, currentSymbol }) {
-    const [symbol, setSymbol] = useState("")
+export default function HeaderSection({ data, currentSymbol }) {
 
-    const handleSearch = () => {
-        if (!symbol) return
-        onSearch(symbol.toUpperCase())
-    }
-
+    const price = data?.current_price || 0
+    const todayReturn = data?.today_return || 0
+    
 
     return(
 
         <div className="flex items-center justify-between border-b pb-4">
+       
         {/*Left*/}
         
             <div>
-                <h1 className="text-3xl font-bold tracking-tight">{currentSymbol || " AAPL "}</h1>
+                <h1 className="text-3xl font-bold tracking-tight">
+                    {currentSymbol || " Search Stock Name "}</h1>
                 
                 <p className="text-sm text-gray-500 mt-1">
                  Last updated: {new Date().toLocaleString()}
@@ -27,9 +25,20 @@ export default function HeaderSection({ onSearch, currentSymbol }) {
             
             {/*Right*/}
             
-            <div className="flex items-center gap-2">
+            <div className="text-right">
 
+                {/* Price */}
+                <h2 className='text-3xl font-bold'>
+                     $ {price.toLocaleString()}
+                </h2>
+              
+                {/* Today Return */}
                 
+                <p>
+                    <span>{}</span>
+                    <span></span>
+
+                </p>
 
             </div>
         </div>

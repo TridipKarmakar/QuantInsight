@@ -26,7 +26,7 @@ export default function Overview() {
         <div className="p-6 space-y-6 bg-gray-50">
 
           {/*  Header */}
-          <HeaderSection onSearch={fetchData} currentSymbol={data?.symbol}/>
+          <HeaderSection data={data} currentSymbol={data?.symbol}/>
           
           { !data && (
             <div className="text-gray-500 text-sm">
