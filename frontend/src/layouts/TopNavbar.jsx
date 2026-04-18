@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input.jsx"
 import { useState } from "react"
-import { Search } from "lucide-react"
+import { Search, Server } from "lucide-react"
 
 
 export default function TopNavbar({ onSearch }) {
@@ -51,6 +51,7 @@ export default function TopNavbar({ onSearch }) {
             
             {/* Right (tabs placeholder) */}
             <div className="ml-5 flex items-center justify-center gap-2 text-xs text-gray-500">
+                <Server size={16}/>
                 <span>Client-side</span>
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
             </div>

@@ -1,5 +1,4 @@
-// import { ArrowUpRightCircle }  from "iconoir-react";
-import { ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { ArrowUpRight, ArrowDownRight, House, ChevronRight, Clock4  } from "lucide-react";
 
 export default function HeaderSection({ data, currentSymbol }) {
 
@@ -12,14 +11,31 @@ export default function HeaderSection({ data, currentSymbol }) {
         <div className="flex items-center justify-between border-b pu-10 pb-10">
        
         {/*Left*/}
-        
+
+
+
             <div>
+                <div className="mt-10 mb-5 text-sm  flex items-center  gap-2">
+
+                    <House size={16} className="text-blue-500"/>
+                
+                    <span className=" ml-2 uppercase tracking-wide font-medium text-stone-500" >Overview</span>
+                    <ChevronRight size={13} className="text-gray-400 ml-2"/>
+                </div>
+
+
+
                 <h1 className="text-3xl font-bold tracking-tight">
                     {currentSymbol || " Search Stock Name "}</h1>
                 
-                <p className="text-sm text-gray-500 mt-1">
-                 Last updated: {new Date().toLocaleString()}
-                </p>
+                <div className="flext items-center">
+                    
+
+                    <p className="flex items-center text-sm text-gray-500 mt-1">
+                    <Clock4 size={16} className="mr-2"/> Last updated: {new Date().toLocaleString()}
+                    </p>
+
+                </div>
             </div>
             
         {/*Right*/}
