@@ -14,7 +14,7 @@ def time_serise_analysis_dataset (df) :
 
     df.index = pd.to_datetime(df.index) #set index value as date time
     
-    df = df.sort_index(ascending=False) # sorted the index
+    df = df.sort_index(ascending=True) # sorted the index
 
     df.reset_index(inplace=True)
     df.rename(columns={"index":"Date"},inplace=True) #change the index name as date 
