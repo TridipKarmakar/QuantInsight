@@ -1,8 +1,9 @@
 
 import { useState } from "react";
 import TopNavbar from "../layouts/TopNavbar.jsx";
-import HeaderSection from "../components/overview/HeaderSection";
-import StatsSection from "../components/overview/StatsSection";
+import HeaderSection from "../components/overview/HeaderSection.jsx";
+import StatsSection from "../components/overview/StatsSection.jsx";
+import PercentileSection from "../components/overview/PerecntileSection.jsx";
 
 
 
@@ -37,6 +38,8 @@ export default function Overview() {
           {/*  Stats */}
           
           { data && < StatsSection data={data} />}
+          
+          { data && < PercentileSection data={data} />}
           
         </div>
           
