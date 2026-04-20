@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import TopNavbar from "../layouts/TopNavbar.jsx";
+import LeftNavbar from "../layouts/LeftNavbar.jsx";
+
 import HeaderSection from "../components/overview/HeaderSection.jsx";
 import StatsSection from "../components/overview/StatsSection.jsx";
 import PercentileSection from "../components/overview/PerecntileSection.jsx";
@@ -21,28 +23,33 @@ export default function Overview() {
 
   return  (
       <div className="min-h-screen bg-gray-50"> 
-        {/*  Navbar */}
-        <TopNavbar onSearch={fetchData}/>
-        
-        <div className="p-6 space-y-6 bg-gray-50">
 
-          {/*  Header */}
-          <HeaderSection data={data} currentSymbol={data?.symbol}/>
-          
-          { !data && (
-            <div className="text-gray-500 text-sm">
-              Search a stock to see analysis
+        {/*  Left Navbar */}
+        <LeftNavbar />
+
+            {/*  TOP Navbar */}
+            <TopNavbar className="w-10"  onSearch={fetchData}/>
+            
+          <div className="pl-30 pt-10 pr-15 space-y-6 bg-gray-50">
+
+              {/*  Header */}
+              <HeaderSection data={data} currentSymbol={data?.symbol}/>
+              
+              { !data && (
+                <div className="text-gray-500 text-sm">
+                  Search a stock to see analysis
+                </div>
+              )}
+
+              {/*  Stats */}
+              
+              { data && < StatsSection data={data} />}
+              
+              { data && < PercentileSection data={data} />}
+              
             </div>
-          )}
+          
 
-          {/*  Stats */}
-          
-          { data && < StatsSection data={data} />}
-          
-          { data && < PercentileSection data={data} />}
-          
-        </div>
-          
       </div>
       
   )

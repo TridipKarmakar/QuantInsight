@@ -13,21 +13,21 @@ export default function TopNavbar({ onSearch }) {
         }
     }
     return (
-        <div className="flex items-center justify-between px-6 py-3 border-b bg-white">
+        <div className="fixed w-full top-0 z-50 flex items-center justify-between  px-6 py-3 border-b bg-white">
             
             {/* Left */}
 
             <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
+                <div className="w-7 lg:w-8  h-7 lg:h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
                     ∿
                 </div>
                 
-                <span className="font-semibold text-lg">Quant Insight</span>
+                <span className="font-semibold text-sm md:text-lg">Quant Insight</span>
             </div>
 
 
             {/* Center (search)*/}
-            <div className="relative mx-4 flex-1 max-w-md">
+            <div className="relative mx-7 flex-1 max-w-30 sm:max-w[200px] md:max-w-75">
 
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"/>
 
@@ -41,7 +41,7 @@ export default function TopNavbar({ onSearch }) {
             </div>           
 
             {/* Right (tabs placeholder) */}
-            <div className="flex items-center ml-4 gap-6 text-sm text-gray-600">
+            <div className="hidden md:flex items-center ml-4 gap-6 text-sx text-gray-600">
                 <span className="font-medium text-blue-600 border-b-2 border-blue-600 pb-1">Overview</span>
                 <span>Analysis</span>
                 <span>Distribution</span>
@@ -50,7 +50,7 @@ export default function TopNavbar({ onSearch }) {
             </div>            
             
             {/* Right (tabs placeholder) */}
-            <div className="ml-5 flex items-center justify-center gap-2 text-xs text-gray-500">
+            <div className="hidden  lg:flex ml-5  items-center justify-center gap-2 text-xs text-gray-500">
                 <Server size={16}/>
                 <span>Client-side</span>
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>

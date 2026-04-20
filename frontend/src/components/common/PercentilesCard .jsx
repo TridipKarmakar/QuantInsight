@@ -19,7 +19,6 @@ export default function PercentileCard({ title, value}) {
   return (
 
 <Card className=" border-0 shadow-none bg-slate-50  rounded-2xl hover:shadow-md" >
-    
         
         <CardHeader className='border-none shadow-none bg-slate-50 flex flex-col items-center justify-center '>
 

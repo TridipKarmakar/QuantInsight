@@ -8,14 +8,14 @@ export default function HeaderSection({ data, currentSymbol }) {
 
     return(
 
-        <div className="flex items-center justify-between border-b pu-10 pb-10">
+        <div className="flex items-center justify-between border-b pb-10 pt-20">
        
         {/*Left*/}
 
 
 
             <div>
-                <div className="mt-10 mb-5 text-sm  flex items-center  gap-2">
+                <div className="mb-5 text-sm  flex items-center  gap-2">
 
                     <House size={16} className="text-blue-500"/>
                 
