@@ -23,7 +23,7 @@ export default function PercentileSection({data}) {
 
                 </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-6">
+            <div className="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-5 gap-4 mt-6">
 
                 <PercentileCard title="5TH" value={data.stats.percentiles["5"]}/>
                 <PercentileCard title="25TH" value={data.stats.percentiles["25"]}/>

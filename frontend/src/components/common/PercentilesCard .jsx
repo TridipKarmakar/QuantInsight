@@ -18,21 +18,21 @@ export default function PercentileCard({ title, value}) {
 
   return (
 
-<Card className=" border-0 shadow-none bg-slate-50  rounded-2xl hover:shadow-md" >
+<div className={` p-4   ${isPositive ? "bg-green-50" : "bg-red-50"}  rounded-2xl hover:shadow-md`} >
         
-        <CardHeader className='border-none shadow-none bg-slate-50 flex flex-col items-center justify-center '>
+        <div className='border-none shadow-none flex flex-col items-center justify-center '>
 
         {/* Title*/}  
-          <CardDescription className="flex justify-center text-xs text-gray-500 tracking-wider uppercase">{title}
-          </CardDescription>   
+          <div className="flex justify-center text-xs lg:text-md font-bold text-gray-500 tracking-wider uppercase">{title}
+          </div>   
           
         {/* Value*/}
           
-          <CardTitle className={`flex justify-center mt-2 text-md font-bold tracking-light ${isPositive ? "text-green-600" : "text-red-500"}`}>{f_value}
-          </CardTitle>  
+          <div className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light ${isPositive ? "text-green-600" : "text-red-500"}`}>{f_value}
+          </div>  
     
-      </CardHeader>
-</Card>
+      </div>
+</div>
 )
 }
 
