@@ -7,6 +7,7 @@ import HeaderSection from "../components/overview/HeaderSection.jsx";
 import StatsSection from "../components/overview/StatsSection.jsx";
 import PercentileSection from "../components/overview/PerecntileSection.jsx";
 
+import MarketInsightsSection from "../components/overview/MarketInsightsSection.jsx";
 
 
 export default function Overview() {
@@ -47,6 +48,9 @@ export default function Overview() {
               
               { data && < PercentileSection data={data} />}
               
+              { data && < MarketInsightsSection data={data} />}
+              
+
             </div>
           
 
