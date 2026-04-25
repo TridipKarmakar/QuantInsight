@@ -3,12 +3,12 @@ import { useState } from "react"
 import { Search, Server } from "lucide-react"
 
 
-export default function TopNavbar({ onSearch }) {
+export default function TopNavbar({ onSearch , loading }) {
 
     const [symbol, setSymbol] = useState("") 
    
     const handleSearch = (e) => {
-        if (e.key == "Enter" && symbol) {
+        if (e.key == "Enter" && symbol && !loading) {
             onSearch(symbol.toUpperCase())
         }
     }
@@ -36,6 +36,7 @@ export default function TopNavbar({ onSearch }) {
                     value={symbol}
                     onChange={(e) => setSymbol(e.target.value)}
                     onKeyDown={handleSearch}
+                    disabled={loading}
                     className="pl-9 h-10 rounded-full bg-gray-50 border border-gray200 shadow-sm focus:ring-2 focus:ring-blue-500"
                 />
             </div>           
