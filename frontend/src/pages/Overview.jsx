@@ -10,6 +10,9 @@ import StatsSection from "../components/overview/StatsSection.jsx";
 import PercentileSection from "../components/overview/PerecntileSection.jsx";
 
 import MarketInsightsSection from "../components/overview/MarketInsightsSection.jsx";
+import ProbabilityInsight from "../components/analysis/ProbabilityInsight.jsx";
+
+
 
 
 
@@ -67,10 +70,19 @@ export default function Overview() {
               { data && < PercentileSection data={data} />}
               
               { data && < MarketInsightsSection data={data} />}
-              
+
+              { data && < ProbabilityInsight data={data} />}
+
+
+
 
             </div>
           </div>
+
+
+
+
+
           {loading && (
           <div className=" fixed top-100 right-100 z-50 bg-white px-3 py-2 rounded-lg shadow border border-gray-200 flex items-center gap-2">
             
