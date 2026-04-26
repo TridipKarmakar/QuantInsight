@@ -52,7 +52,7 @@ export default function Overview() {
         {/*  TOP Navbar */}
         <TopNavbar className="w-10"  onSearch={fetchData} loading={loading}/>
             
-          <div className="pl-30 pt-10 pr-15 space-y-6 bg-gray-50">
+          <div className="pl-90 pt-10 pr-80 space-y-6 bg-gray-50 ">
 
               {/*  Header */}
               <HeaderSection data={data} currentSymbol={data?.symbol}/>
