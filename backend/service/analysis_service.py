@@ -99,6 +99,6 @@ def get_stock_analysis_from_db(symbol) :
         "poission -2%" : poission,
         "geometric" : geometric,
         "uniform" : uniform,
-        "monte carlo" : monte_carlo
+        "monte_carlo" : monte_carlo
 
     }

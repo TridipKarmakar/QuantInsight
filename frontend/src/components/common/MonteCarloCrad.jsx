@@ -8,8 +8,9 @@ import React from 'react'
 export default function MonteCarlocard({data}) {
   
   const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
-
-
+  
+  const monte_carlo = (data?.monte_carlo?.exoected_days_for_gain || 0)
+  
   
   return (
 
@@ -46,7 +47,8 @@ export default function MonteCarlocard({data}) {
                                             <div className='border-none shadow-none flex flex-col items-start '>
 
                                             {/* Title*/}  
-                                            <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                            <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Mean Price
+
                                             </div>   
                                             
                                             {/* Value*/}
@@ -65,7 +67,7 @@ export default function MonteCarlocard({data}) {
                                             <div className='border-none shadow-none flex flex-col items-start '>
 
                                             {/* Title*/}  
-                                            <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                            <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Median Price
                                             </div>   
                                             
                                             {/* Value*/}
@@ -83,7 +85,7 @@ export default function MonteCarlocard({data}) {
                                 
                                 <div className="grid grid-cols-2 gap-4 mb-4">
 
-                                    {/* Geometric and Poisson card */}
+                                    {/* Min Price */}
 
                                     
                                     <div className={``} >
@@ -91,7 +93,7 @@ export default function MonteCarlocard({data}) {
                                             <div className='border-none shadow-none flex flex-col items-start  '>
 
                                             {/* Title*/}  
-                                            <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                            <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Min Price
                                             </div>   
                                             
                                             {/* Value*/}
@@ -102,7 +104,7 @@ export default function MonteCarlocard({data}) {
                                         </div>
                                     </div>
 
-                                    {/* Geometric and Poisson card */}
+                                    {/* Max Price */}
 
                                     
                                     <div className={``} >
@@ -110,7 +112,7 @@ export default function MonteCarlocard({data}) {
                                             <div className='border-none shadow-none flex flex-col items-start '>
 
                                                 {/* Title*/}  
-                                                <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                                <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Max Price
                                                 </div>   
                                                 
                                                 {/* Value*/}
