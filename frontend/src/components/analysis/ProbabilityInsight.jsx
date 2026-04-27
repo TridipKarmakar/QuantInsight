@@ -14,9 +14,7 @@ export default function ProbabilityInsight({data}) {
   
   return (
 
-    <div> 
-             
-              
+    <div>   
                 <div className="mb-5 mt-10 text-sm  flex items-center  gap-2">
 
                     <TrendingUp size={16} className="text-blue-500"/>
@@ -25,7 +23,7 @@ export default function ProbabilityInsight({data}) {
                 
                 </div>
               
-              <div className="flex gap-3 flex-col lg:flex-row justify-between pb-3">
+              <div className="grid grid-cols-2 gap-4">
               
                 {/* Probability Insights */}
                     

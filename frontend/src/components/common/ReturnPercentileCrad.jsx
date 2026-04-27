@@ -26,7 +26,7 @@ export default function ProbabilityInsightCard({data}) {
 
     <div> 
  
-              <div className="flex gap-3 flex-col lg:flex-row justify-between pb-3">
+              
               
                 {/* Probability Insights */}
 
@@ -112,7 +112,7 @@ export default function ProbabilityInsightCard({data}) {
                         </div>
                     </div>
 
-                </div>                
+                            
     </div>
   )
 }
