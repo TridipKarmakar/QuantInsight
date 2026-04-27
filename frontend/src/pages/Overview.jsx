@@ -52,7 +52,7 @@ export default function Overview() {
         {/*  TOP Navbar */}
         <TopNavbar className="w-10"  onSearch={fetchData} loading={loading}/>
             
-          <div className="pl-90 pt-10 pr-80 space-y-6 bg-gray-50 ">
+          <div className="pl-30 lg:pl-50 pt-10 pr-15 lg:pr-50 space-y-6 bg-gray-50 ">
 
               {/*  Header */}
               <HeaderSection data={data} currentSymbol={data?.symbol}/>
@@ -84,7 +84,7 @@ export default function Overview() {
 
 
           {loading && (
-          <div className=" fixed top-100 right-100 z-50 bg-white px-3 py-2 rounded-lg shadow border border-gray-200 flex items-center gap-2">
+          <div className=" fixed top-70 right-50 lg:right-140 z-50  bg-white px-3 py-2 rounded-lg shadow border border-gray-200 flex items-center gap-2">
             
           <span className="text-sm text-blue-900
            font-bold">Fetching data </span>

@@ -36,7 +36,7 @@ export default function ProbabilityInsight({data}) {
                 
                 </div>
               
-              <div className="flex items-col justify-between">
+              <div className="flex gap-3 flex-col lg:flex-row justify-between pb-3">
               
                 {/* Probability Insights */}
 
