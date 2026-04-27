@@ -1,4 +1,4 @@
-import { TrendingUp, ChevronRight  } from "lucide-react";
+import { TrendingUp, ChevronRight, SquareActivity  } from "lucide-react";
 import React from 'react'
 
 
@@ -114,7 +114,7 @@ export default function ProbabilityInsight({data}) {
                                         <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
                                         </span>  
                                     
-                                    </div>
+                                        </div>
                                 </div>
 
                             </div>
@@ -133,41 +133,67 @@ export default function ProbabilityInsight({data}) {
                             <div className="flext items-center">
                     
                                 <p className="flex items-center  font-bold text-lg text-gray-500 mt-1">
-                                    <TrendingUp size={22} strokeWidth={3} className="text-blue-500 mr-2"/> Return Percentiles
+                                    <SquareActivity size={22} strokeWidth={3} className="text-blue-500 mr-2"/> Monte Carlo Simulation
 
                                 </p>
 
-                                <h2 className="text-gray-500 pt-2 mb-4">Empirical up/down probabilities from historical data</h2>
+                                <h2 className="text-gray-500 pt-2 mb-4">30-day forward projections — 1,000 runs</h2>
 
                             </div>
 
-                            {/* Up */}
-
-                            <div>
-                                <div className="flex justify-between text-gray-700 text-sm font-bold mb-1">
-                                    <span>Probability Up</span>
-                                    <span className="text-green-600 font-medium">{up.toFixed(2)}%</span>
-                                </div>
-                                <ProgressBar value={up} color="bg-blue-500" />
-                            </div>
-
-                            {/* Down */}
-
-                            <div className="mt-5 pb-4">
-                                <div className="flex justify-between text-gray-700 text-sm font-bold mb-1">
-                                    <span>Probability Down</span>
-                                    <span className="text-red-600 font-medium">{down.toFixed(2)}%</span>
-                                </div>
-                                <ProgressBar value={down} color="bg-blue-500" />
-                            </div>
+                           {/* Mean Price & Median Price */}
                             
+                            <div className="grid grid-cols-2 gap-4 mb-4">
+
+                                {/* Min Price */}
+
+                                
+                                <div className={``} >
+                                        
+                                        <div className='border-none shadow-none flex flex-col items-start '>
+
+                                        {/* Title*/}  
+                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                        </div>   
+                                        
+                                        {/* Value*/}
+                                        
+                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                        </span>  
+                                    
+                                    </div>
+                                </div>
+
+                                {/* Median Price */}
+
+                                
+                                <div className={` `} >
+                                        
+                                        <div className='border-none shadow-none flex flex-col items-start '>
+
+                                        {/* Title*/}  
+                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                        </div>   
+                                        
+                                        {/* Value*/}
+                                        
+                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                        </span>  
+                                    
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            {/* Min Price & Max Price */}
                             
-                            <div className="flex justify-between gap-1 pb-4">
+                            <div className="grid grid-cols-2 gap-4 mb-4">
 
                                 {/* Geometric and Poisson card */}
 
                                 
-                                <div className={` bg-gray-100 p-4 rounded-2xl hover:shadow-md pr-5 `} >
+                                <div className={``} >
                                         
                                         <div className='border-none shadow-none flex flex-col items-start  '>
 
@@ -186,7 +212,7 @@ export default function ProbabilityInsight({data}) {
                                 {/* Geometric and Poisson card */}
 
                                 
-                                <div className={` bg-gray-100 p-4 rounded-2xl hover:shadow-md pr-5`} >
+                                <div className={``} >
                                         
                                         <div className='border-none shadow-none flex flex-col items-start '>
 
@@ -203,6 +229,13 @@ export default function ProbabilityInsight({data}) {
                                 </div>
 
                             </div>
+
+
+
+
+
+
+
 
                         </div>
                     </div>
