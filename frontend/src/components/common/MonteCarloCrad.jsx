@@ -9,7 +9,10 @@ export default function MonteCarlocard({data}) {
   
   const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
   
-  const monte_carlo = (data?.monte_carlo?.exoected_days_for_gain || 0)
+  const monte_carlo_mean = (data?.monte_carlo?.mean_price || 0)
+  const monte_carlo_medium = (data?.monte_carlo?.mediun_price || 0)
+  const monte_carlo_min = (data?.monte_carlo?.min_price || 0)
+  const monte_carlo_max = (data?.monte_carlo?.max_price || 0)
   
   
   return (
@@ -53,7 +56,7 @@ export default function MonteCarlocard({data}) {
                                             
                                             {/* Value*/}
                                             
-                                            <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                            <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{monte_carlo_mean.toFixed(2)}
                                             </span>  
                                         
                                         </div>
@@ -72,7 +75,7 @@ export default function MonteCarlocard({data}) {
                                             
                                             {/* Value*/}
                                             
-                                            <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                            <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{monte_carlo_medium.toFixed(2)}
                                             </span>  
                                         
                                         </div>
@@ -98,7 +101,7 @@ export default function MonteCarlocard({data}) {
                                             
                                             {/* Value*/}
                                             
-                                            <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                            <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{monte_carlo_min.toFixed(2)}
                                             </span>  
                                         
                                         </div>
@@ -117,7 +120,7 @@ export default function MonteCarlocard({data}) {
                                                 
                                                 {/* Value*/}
                                                 
-                                                <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                                <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{monte_carlo_max.toFixed(2)}
                                                 </span>  
                                             
                                             </div>

@@ -96,7 +96,7 @@ def get_stock_analysis_from_db(symbol) :
         "insights" : insights,
         "probability" : probability,
         "binomial" : binomial,
-        "poission -2%" : poission,
+        "poission_2%" : poission,
         "geometric" : geometric,
         "uniform" : uniform,
         "monte_carlo" : monte_carlo

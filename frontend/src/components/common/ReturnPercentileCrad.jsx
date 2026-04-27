@@ -19,6 +19,9 @@ export default function ProbabilityInsightCard({data}) {
   const down = (data?.probability?.prob_down || 0) * 100
 
   const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
+  
+  
+  
 
 
   
@@ -96,7 +99,7 @@ export default function ProbabilityInsightCard({data}) {
                                         <div className='border-none shadow-none flex flex-col items-start '>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
+                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Poisson {`λ`} (extreme -2%)
                                         </div>   
                                         
                                         {/* Value*/}
