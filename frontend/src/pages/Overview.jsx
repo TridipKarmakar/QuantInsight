@@ -10,6 +10,9 @@ import StatsSection from "../components/overview/StatsSection.jsx";
 import PercentileSection from "../components/overview/PerecntileSection.jsx";
 
 import MarketInsightsSection from "../components/overview/MarketInsightsSection.jsx";
+import ProbabilityInsight from "../components/analysis/ProbabilityInsight.jsx";
+
+
 
 
 
@@ -49,7 +52,7 @@ export default function Overview() {
         {/*  TOP Navbar */}
         <TopNavbar className="w-10"  onSearch={fetchData} loading={loading}/>
             
-          <div className="pl-30 pt-10 pr-15 space-y-6 bg-gray-50">
+          <div className="pl-30 lg:pl-50 pt-10 pr-15 lg:pr-50 space-y-6 bg-gray-50 ">
 
               {/*  Header */}
               <HeaderSection data={data} currentSymbol={data?.symbol}/>
@@ -67,18 +70,31 @@ export default function Overview() {
               { data && < PercentileSection data={data} />}
               
               { data && < MarketInsightsSection data={data} />}
-              
+
+              { data && < ProbabilityInsight data={data} />}
+
+
+
 
             </div>
           </div>
+
+
+
+
+
           {loading && (
-          <div className=" fixed top-100 right-100 z-50 bg-white px-3 py-2 rounded-lg shadow border border-gray-200 flex items-center gap-2">
+          <div className=" fixed inset-0 z-50 flex items-center justify-center ointer-events-none  ">
             
-          <span className="text-sm text-blue-900
-           font-bold">Fetching data </span>
-           
-          <BeatLoader className=" " color="#1F51FF" size={5} />
-        
+            <div className="bg-white px-5 py-3 rounded-xl shadow border flex items-center gap-3">
+
+              <span className="text-sm text-blue-900
+              font-bold">Fetching data </span>
+              
+              <BeatLoader className=" " color="#1F51FF" size={5} />
+
+            </div>
+
           </div>
         )}
 
