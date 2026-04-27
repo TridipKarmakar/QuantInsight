@@ -1,32 +1,21 @@
 import { TrendingUp, ChevronRight, SquareActivity  } from "lucide-react";
 import React from 'react'
 
+import ProbabilityInsightCard from '../common/ReturnPercentileCrad' 
+import MonteCarlocard from '../common/MonteCarloCrad' 
 
-function ProgressBar({ value, color}){
-    return (
-        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden ">
-            <div 
-            className={`h-full ${color}`}
-            style={{ width: `${value}%`}} ></div>
-        </div>
-    )
-}
+
 
 
 export default function ProbabilityInsight({data}) {
   
-  const up = (data?.probability?.prob_up || 0) * 100
-  const down = (data?.probability?.prob_down || 0) * 100
-
-  const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
-
+  
 
   
   return (
 
     <div> 
-
-             {/* Analysis Section  */}
+             
               
                 <div className="mb-5 mt-10 text-sm  flex items-center  gap-2">
 
@@ -39,206 +28,14 @@ export default function ProbabilityInsight({data}) {
               <div className="flex gap-3 flex-col lg:flex-row justify-between pb-3">
               
                 {/* Probability Insights */}
+                    
+                    
+                    <ProbabilityInsightCard data={data}/>
 
-                    <div className="rounded-2xl shadow-sm border border-gray-200 hover:shadow-md h-full" >
                     
 
-                        <div className="p-4 pt-1 pb-1">
-
-                            <div className="flext items-center">
-                    
-                                <p className="flex items-center  font-bold text-lg text-gray-500 mt-1">
-                                    <TrendingUp size={22} strokeWidth={3} className="text-blue-500 mr-2"/> Return Percentiles
-
-                                </p>
-
-                                <h2 className="text-gray-500 pt-2 mb-4">Empirical up/down probabilities from historical data</h2>
-
-                            </div>
-
-                            {/* Up */}
-
-                            <div>
-                                <div className="flex justify-between text-gray-700 text-sm font-bold mb-1">
-                                    <span>Probability Up</span>
-                                    <span className="text-green-600 font-medium">{up.toFixed(2)}%</span>
-                                </div>
-                                <ProgressBar value={up} color="bg-blue-500" />
-                            </div>
-
-                            {/* Down */}
-
-                            <div className="mt-5 pb-4">
-                                <div className="flex justify-between text-gray-700 text-sm font-bold mb-1">
-                                    <span>Probability Down</span>
-                                    <span className="text-red-600 font-medium">{down.toFixed(2)}%</span>
-                                </div>
-                                <ProgressBar value={down} color="bg-blue-500" />
-                            </div>
-                            
-                            
-                            <div className="flex justify-between gap-1 pb-4">
-
-                                {/* Geometric and Poisson card */}
-
-                                
-                                <div className={` bg-gray-100 p-4 rounded-2xl hover:shadow-md pr-5 `} >
-                                        
-                                        <div className='border-none shadow-none flex flex-col items-start  '>
-
-                                        {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
-                                        </div>   
-                                        
-                                        {/* Value*/}
-                                        
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
-                                        </span>  
-                                    
-                                    </div>
-                                </div>
-
-                                {/* Geometric and Poisson card */}
-
-                                
-                                <div className={` bg-gray-100 p-4 rounded-2xl hover:shadow-md pr-5 `} >
-                                        
-                                        <div className='border-none shadow-none flex flex-col items-start '>
-
-                                        {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
-                                        </div>   
-                                        
-                                        {/* Value*/}
-                                        
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
-                                        </span>  
-                                    
-                                        </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    {/* Monte Carlo Simulation */}
-
-                    <div className="rounded-2xl shadow-sm border border-gray-200 hover:shadow-md h-full" >
-                    
-
-                        <div className="p-4 pt-1 pb-1">
-
-                            <div className="flext items-center">
-                    
-                                <p className="flex items-center  font-bold text-lg text-gray-500 mt-1">
-                                    <SquareActivity size={22} strokeWidth={3} className="text-blue-500 mr-2"/> Monte Carlo Simulation
-
-                                </p>
-
-                                <h2 className="text-gray-500 pt-2 mb-4">30-day forward projections — 1,000 runs</h2>
-
-                            </div>
-
-                           {/* Mean Price & Median Price */}
-                            
-                            <div className="grid grid-cols-2 gap-4 mb-4">
-
-                                {/* Min Price */}
-
-                                
-                                <div className={``} >
-                                        
-                                        <div className='border-none shadow-none flex flex-col items-start '>
-
-                                        {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
-                                        </div>   
-                                        
-                                        {/* Value*/}
-                                        
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
-                                        </span>  
-                                    
-                                    </div>
-                                </div>
-
-                                {/* Median Price */}
-
-                                
-                                <div className={` `} >
-                                        
-                                        <div className='border-none shadow-none flex flex-col items-start '>
-
-                                        {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
-                                        </div>   
-                                        
-                                        {/* Value*/}
-                                        
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
-                                        </span>  
-                                    
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            {/* Min Price & Max Price */}
-                            
-                            <div className="grid grid-cols-2 gap-4 mb-4">
-
-                                {/* Geometric and Poisson card */}
-
-                                
-                                <div className={``} >
-                                        
-                                        <div className='border-none shadow-none flex flex-col items-start  '>
-
-                                        {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
-                                        </div>   
-                                        
-                                        {/* Value*/}
-                                        
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
-                                        </span>  
-                                    
-                                    </div>
-                                </div>
-
-                                {/* Geometric and Poisson card */}
-
-                                
-                                <div className={``} >
-                                        
-                                        <div className='border-none shadow-none flex flex-col items-start '>
-
-                                        {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Geometric: E[days to gain]
-                                        </div>   
-                                        
-                                        {/* Value*/}
-                                        
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
-                                        </span>  
-                                    
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
+                {/* Monte Carlo Simulation */}
+                    <MonteCarlocard data={data} />
 
                 </div>
 
