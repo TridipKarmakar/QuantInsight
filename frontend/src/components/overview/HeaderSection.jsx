@@ -52,7 +52,7 @@ export default function HeaderSection({ data, currentSymbol }) {
                 <p className={`mt-1 text-md font-medium flex items-center justify-end gap-1 ${isPositive ? "text-green-600" : "text-red-500"}`}>
 
                     {isPositive ? (<ArrowUpRight/>):(<ArrowDownRight />)}
-                    <span>{isPositive ? "+":"-"}{todayReturn.toFixed(2)}%</span>
+                    <span>{isPositive ? "+":""}{todayReturn.toFixed(2)}%</span>
                     <span>Today</span>
 
                 </p>
