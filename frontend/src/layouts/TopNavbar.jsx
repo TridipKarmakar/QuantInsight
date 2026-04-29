@@ -18,11 +18,9 @@ export default function TopNavbar({ onSearch , loading }) {
             {/* Left */}
 
             <div className="flex items-center gap-3">
-                <div className="w-7 lg:w-8  h-7 lg:h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
-                    ∿
-                </div>
+               
+                <img src="/logo.png" width={150} height={200} alt="" />
                 
-                <span className="font-semibold text-sm md:text-lg">Quant Insight</span>
             </div>
 
 

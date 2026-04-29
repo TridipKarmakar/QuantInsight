@@ -19,6 +19,9 @@ export default function ProbabilityInsightCard({data}) {
   const down = (data?.probability?.prob_down || 0) * 100
 
   const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
+//   const geometric_value = (data?.poission_2%?.exoected_days_for_gain || 0)
+
+
   
   
   
