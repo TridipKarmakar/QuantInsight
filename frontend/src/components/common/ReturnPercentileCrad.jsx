@@ -19,7 +19,7 @@ export default function ProbabilityInsightCard({data}) {
   const down = (data?.probability?.prob_down || 0) * 100
 
   const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
-//   const geometric_value = (data?.poission_2%?.exoected_days_for_gain || 0)
+  const poission_2_percent = (data?.poission_2_percent?.lambda || 0)
 
 
   
@@ -75,7 +75,7 @@ export default function ProbabilityInsightCard({data}) {
                             
                             <div className="grid grid-cols-2 gap-4 pb-4">
 
-                                {/* Geometric and Poisson card */}
+                                {/* Geometric */}
 
                                 
                                 <div className={` bg-gray-100 p-4 rounded-2xl hover:shadow-md pr-5 `} >
@@ -94,7 +94,7 @@ export default function ProbabilityInsightCard({data}) {
                                     </div>
                                 </div>
 
-                                {/* Geometric and Poisson card */}
+                                {/* Poisson card */}
 
                                 
                                 <div className={` bg-gray-100 p-4 rounded-2xl hover:shadow-md pr-5 `} >
@@ -102,12 +102,12 @@ export default function ProbabilityInsightCard({data}) {
                                         <div className='border-none shadow-none flex flex-col items-start '>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Poisson {`λ`} (extreme -2%)
-                                        </div>   
+                                        <p className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Poisson *lambda*(extreme -2%)
+                                        </p>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{poission_2_percent.toFixed(2)}
                                         </span>  
                                     
                                         </div>

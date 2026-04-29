@@ -1,5 +1,6 @@
 import { SquareActivity, Lightbulb  } from "lucide-react";
 import React from 'react'
+import PriceRangebar from "../priceRangeBar/PriceRangeBar.jsx"
 
 
 
@@ -130,6 +131,8 @@ export default function MonteCarlocard({data}) {
 
                             </div>
 
+                            <PriceRangebar mc={data?.monte_carlo}/>
+
                             {/* Probability of Profit Section */}
 
                             <div className="rounded-2xl shadow-sm  bg-blue-50 border border-blue-200 hover:shadow-md m-4" >
@@ -137,12 +140,12 @@ export default function MonteCarlocard({data}) {
 
                                     <div className="flex items-center gap-2">
                                                                                 
-                                        <p className="items-center pt-3 pb-3">
+                                        <div className="items-center pt-3 pb-3">
                                         
                                         <h2 className="text-gray-700 text-sm font-bold "> Probability of Profit  </h2>
                                         <p className="text-xs lg:text-md text-gray-500  tracking-wider"> Price higher after 30 days</p>   
 
-                                        </p>
+                                        </div>
 
 
                                     </div>
