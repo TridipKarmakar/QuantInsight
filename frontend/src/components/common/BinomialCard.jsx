@@ -35,22 +35,22 @@ export default function BinomialCard({data}) {
 
                             
                             
-                            <div className="grid grid-cols-1 gap-4 pb-4">
+                            <div className="grid grid-cols-1 gap-1 pb-4">
 
                                 {/* 3 up in 5 Days */}
 
                                 
                                 <div className={` `} >
                                         
-                                    <div className='border-none shadow-none grid grid-cols-2 items-start  '>
+                                    <div className='border-none shadow-none grid grid-cols-2 items-start'>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider mt-1 "> P(exactly 3↑ in 5 days)
+                                        <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-lighter text-bala mt-2 "> P(exactly 3↑ in 5 days)
                                         </div>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center mt-2 text-sm text-blue-500 font-bold tracking-light `}>{(three_up_in_five_days.toFixed(2)) * 100} %
+                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light  `}>{(three_up_in_five_days.toFixed(2)) * 100} %
                                         </span>  
                                     
                                     </div>
@@ -58,22 +58,22 @@ export default function BinomialCard({data}) {
 
                                 {/* All 5 days up */}
 
-                                <div className={` `} >
+                       <div className={` `} >
                                         
                                     <div className='border-none shadow-none grid grid-cols-2 items-start  '>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-wider mt-2 "> P(all 5 days ↑)
+                                        <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-wider mt-2 "> P(1 events)
+
                                         </div>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(all_five_days_up.toFixed(2)) * 100} %
+                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(all_five_days_up * 100).toFixed(2)} %
                                         </span>  
                                     
                                     </div>
                                 </div>
-
 
                             </div>
 

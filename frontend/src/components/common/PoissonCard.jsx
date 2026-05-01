@@ -90,7 +90,7 @@ export default function PoissonCard({data}) {
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(one_events.toFixed(2)) * 100} %
+                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(one_events * 100).toFixed(2)} %
                                         </span>  
                                     
                                     </div>
