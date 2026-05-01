@@ -37,22 +37,22 @@ export default function PoissonCard({data}) {
 
                             
                             
-                            <div className="grid grid-cols-1 gap-4 pb-4">
+                            <div className="grid grid-cols-1 gap-1 pb-4">
 
                                 {/* Lambda */}
 
                                 
                                 <div className={` `} >
                                         
-                                    <div className='border-none shadow-none grid grid-cols-2 items-start  '>
+                                    <div className='border-none shadow-none grid grid-cols-2 items-start'>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-wider mt-2 "> Lambda (λ)
+                                        <div className="flex justify-start items-center text-xs lg:text-md text-gray-500  tracking-lighter text-balance whitespace-nowrap mt-2 "> Lambda (λ)
                                         </div>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center mt-2 text-sm font-bold tracking-light `}>{(labda.toFixed(2))}
+                                        <span className={`flex justify-end items-center mt-2 text-xs font-bold tracking-light`}>{(labda.toFixed(2))}
                                         </span>  
                                     
                                     </div>
@@ -62,16 +62,16 @@ export default function PoissonCard({data}) {
 
                                 <div className={` `} >
                                         
-                                    <div className='border-none shadow-none grid grid-cols-2 items-start  '>
+                                    <div className='border-none shadow-none grid grid-cols-2 items-start'>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-wider mt-2 "> P(0 events)
+                                        <div className="flex justify-start items-center text-xs lg:text-md text-gray-500  tracking-lighter text-balance whitespace-nowrap mt-2 "> P(0 events)
 
                                         </div>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(zero_events.toFixed(2)) * 100} %
+                                        <span className={`flex justify-end items-center mt-2 text-xs text-blue-500 font-bold tracking-light `}>{(zero_events * 100).toFixed(2)} %
                                         </span>  
                                     
                                     </div>
@@ -90,7 +90,7 @@ export default function PoissonCard({data}) {
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(one_events * 100).toFixed(2)} %
+                                        <span className={`flex justify-end items-center mt-2 text-xs font-bold tracking-light `}>{(one_events * 100).toFixed(2)} %
                                         </span>  
                                     
                                     </div>
@@ -100,7 +100,7 @@ export default function PoissonCard({data}) {
 
                                 <div className={` `} >
                                         
-                                    <div className='border-none shadow-none grid grid-cols-2 items-start  '>
+                                    <div className='border-none shadow-none grid grid-cols-2 items-start'>
 
                                         {/* Title*/}  
                                         <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-wider mt-2 "> P(2+ events)
@@ -109,7 +109,7 @@ export default function PoissonCard({data}) {
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(two_plus_events.toFixed(2)) * 100} %
+                                        <span className={`flex justify-end items-start mt-2 text-xs font-bold tracking-light`}>{(two_plus_events * 100).toFixed(2)} %
                                         </span>  
                                     
                                     </div>
