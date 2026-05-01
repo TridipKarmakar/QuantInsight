@@ -3,6 +3,8 @@ import React from 'react'
 
 import BinomialCard  from '../common/BinomialCard.jsx' 
 import PoissonCard  from '../common/PoissonCard.jsx' 
+import GeometricCard  from '../common/GeometricCrad.jsx' 
+import UniformCard  from '../common/UniformCrad.jsx' 
 
 
 
@@ -23,15 +25,16 @@ export default function DistributionInsight({data}) {
                 
                 </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 pb-5">
               
                 {/* Binomial Probability */}
                     
                     
                     <BinomialCard data={data}/>
                     <PoissonCard data={data}/>
-                    <BinomialCard data={data}/>
-                    <BinomialCard data={data}/>
+                    <GeometricCard data={data}/>
+                    <UniformCard data={data}/>
+
 
                     
 

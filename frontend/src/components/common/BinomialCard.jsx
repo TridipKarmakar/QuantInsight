@@ -54,6 +54,7 @@ export default function BinomialCard({data}) {
                                         </span>  
                                     
                                     </div>
+                                    
                                 </div>
 
                                 {/* All 5 days up */}
