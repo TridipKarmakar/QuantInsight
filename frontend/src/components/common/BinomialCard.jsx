@@ -4,11 +4,9 @@ import React from 'react'
 export default function BinomialCard({data}) {
   
  
-  const geometric_value = (data?.geometric?.exoected_days_for_gain || 0)
-  const poission_2_percent = (data?.poission_2_percent?.lambda || 0)
-
-
-  
+  const three_up_in_five_days = (data?.binomial["3_up_in_5_days"] || 0)
+  const all_five_days_up = (data?.binomial["5_up_in_5_days"] || 0)
+ 
 
 
   
@@ -16,8 +14,7 @@ export default function BinomialCard({data}) {
 
     <div> 
  
-              
-              
+                            
                 {/* Probability Insights */}
 
                     <div className="rounded-2xl shadow-sm border border-gray-200 hover:shadow-md h-full" >
@@ -40,7 +37,7 @@ export default function BinomialCard({data}) {
                             
                             <div className="grid grid-cols-1 gap-4 pb-4">
 
-                                {/* Geometric */}
+                                {/* 3 up in 5 Days */}
 
                                 
                                 <div className={` `} >
@@ -48,35 +45,35 @@ export default function BinomialCard({data}) {
                                     <div className='border-none shadow-none grid grid-cols-2 items-start  '>
 
                                         {/* Title*/}  
-                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider "> P(exactly 3↑ in 5 days)
+                                        <div className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider mt-1 "> P(exactly 3↑ in 5 days)
                                         </div>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center mt-2 text-sm font-bold tracking-light `}>{geometric_value.toFixed(2)}
+                                        <span className={`flex justify-center mt-2 text-sm font-bold tracking-light `}>{(three_up_in_five_days.toFixed(2)) * 100} %
                                         </span>  
                                     
                                     </div>
                                 </div>
 
-                                {/* Poisson card */}
+                                {/* All 5 days up */}
 
-                                
-                                <div className={`  `} >
+                                <div className={` `} >
                                         
-                                        <div className='border-none shadow-none flex flex-col items-start '>
+                                    <div className='border-none shadow-none grid grid-cols-2 items-start  '>
 
                                         {/* Title*/}  
-                                        <p className="flex  justify-center text-xs lg:text-md text-gray-500  tracking-wider uppercase"> Poisson *lambda*(extreme -2%)
-                                        </p>   
+                                        <div className="flex  justify-start items-center text-xs lg:text-md text-gray-500  tracking-wider mt-2 "> P(all 5 days ↑)
+                                        </div>   
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center mt-2 text-md lg:text-lg font-bold tracking-light `}>{poission_2_percent.toFixed(2)}
+                                        <span className={`flex justify-center items-center mt-2 text-sm font-bold tracking-light `}>{(all_five_days_up.toFixed(2)) * 100} %
                                         </span>  
                                     
-                                        </div>
+                                    </div>
                                 </div>
+
 
                             </div>
 
