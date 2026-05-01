@@ -50,7 +50,7 @@ export default function BinomialCard({data}) {
                                         
                                         {/* Value*/}
                                         
-                                        <span className={`flex justify-center mt-2 text-sm font-bold tracking-light `}>{(three_up_in_five_days.toFixed(2)) * 100} %
+                                        <span className={`flex justify-center mt-2 text-sm text-blue-500 font-bold tracking-light `}>{(three_up_in_five_days.toFixed(2)) * 100} %
                                         </span>  
                                     
                                     </div>

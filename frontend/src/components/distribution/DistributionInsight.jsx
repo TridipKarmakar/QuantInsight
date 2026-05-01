@@ -1,7 +1,8 @@
-import { ChevronRight, SquareActivity, Dices } from "lucide-react";
+import { ChevronRight, Dices } from "lucide-react";
 import React from 'react'
 
 import BinomialCard  from '../common/BinomialCard.jsx' 
+import PoissonCard  from '../common/PoissonCard.jsx' 
 
 
 
@@ -28,7 +29,7 @@ export default function DistributionInsight({data}) {
                     
                     
                     <BinomialCard data={data}/>
-                    <BinomialCard data={data}/>
+                    <PoissonCard data={data}/>
                     <BinomialCard data={data}/>
                     <BinomialCard data={data}/>
 
