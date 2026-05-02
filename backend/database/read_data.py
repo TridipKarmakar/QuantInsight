@@ -5,6 +5,10 @@ def get_stock_dataframe(collection, symbol) :
 
     if not data :
         return None
+    
+    historical_data = list(collection.find({"symbol" :symbol }, {"_id":0,"date":1,"close":1,"return":1}).sort("date",1))
+    
+    print(historical_data)
     df = pd.DataFrame(data)
 
     df["date"] = pd.to_datetime(df["date"])
@@ -12,6 +16,6 @@ def get_stock_dataframe(collection, symbol) :
 
     df.set_index("date", inplace=True)
 
-    return df
+    return df,historical_data
 
 
