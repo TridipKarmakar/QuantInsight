@@ -17,12 +17,15 @@ from analytics.monte_carlo_simulation.mote_carlo_simulation_analysis import mont
 
 
 def get_stock_analysis_from_db(symbol) :
-    df = get_stock_dataframe(collection, symbol)
+    df, historical_data = get_stock_dataframe(collection, symbol)
     if df is None:
         return {"error" : "No data found"}
     
     current_price = df["close"].iloc[-1]
     today_return = df["pct_change"].iloc[-1]
+
+    open_price = df["open"].iloc[-1]
+    close_price = df["close"].iloc[-1]  
 
     stats = compute_all_statistics(df)
 
@@ -90,6 +93,8 @@ def get_stock_analysis_from_db(symbol) :
     return {
 
         "symbol" : symbol,
+        "open_price" : open_price,
+        "close_price" : close_price,
         "current_price" : current_price,
         "today_return" : today_return,
         "stats" : stats,
@@ -99,6 +104,7 @@ def get_stock_analysis_from_db(symbol) :
         "poission_2_percent" : poission,
         "geometric" : geometric,
         "uniform" : uniform,
-        "monte_carlo" : monte_carlo
+        "monte_carlo" : monte_carlo,
+        "historical_data" : historical_data
 
     }

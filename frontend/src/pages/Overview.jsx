@@ -76,14 +76,8 @@ export default function Overview() {
 
               { data && < DistributionInsight data={data} />}
 
-
-
-
             </div>
           </div>
-
-
-
 
 
           {loading && (
