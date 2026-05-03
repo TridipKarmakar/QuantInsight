@@ -12,6 +12,7 @@ import PercentileSection from "../components/overview/PerecntileSection.jsx";
 import MarketInsightsSection from "../components/overview/MarketInsightsSection.jsx";
 import ProbabilityInsight from "../components/analysis/ProbabilityInsight.jsx";
 import DistributionInsight from "../components/distribution/DistributionInsight.jsx";
+import HistoricalData from "../components/historicalData/HistoricalData.jsx";
 
 
 
@@ -75,6 +76,10 @@ export default function Overview() {
               { data && < ProbabilityInsight data={data} />}
 
               { data && < DistributionInsight data={data} />}
+
+              { data && < HistoricalData data={data} />}
+
+
 
             </div>
           </div>
