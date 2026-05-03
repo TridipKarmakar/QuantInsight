@@ -27,6 +27,13 @@ export default function HistoricalData({data}) {
     return data.slice(-days)
     
 }
+
+
+  const getChartWidth = () => {
+    if (range === "30D" || range === "3M") return "100%";
+    return chartData.length * 6;
+  };
+
   
   const chartData = filterData(data.historical_data,range)
   const chartWidth = chartData.length * 4; 
@@ -96,13 +103,13 @@ export default function HistoricalData({data}) {
                     </Tabs>
 
                  
-                  <div>
-
-                    
-                        <PriceChart data={chartData}/>
-                    
+                 
+                      <div >
                       
-                    </div>
+                        <PriceChart data={chartData} range={range}/>
+                      
+                      </div>
+                
 
                     </CardContent>
                   </Card>

@@ -1,7 +1,36 @@
 import {AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid  } from "recharts"
 
 
-export default function PriceChart({data,}) {
+
+
+export default function PriceChart({data,range}) {
+
+    // const withMA = data.map((item, index, arr) => {
+    //   const period = 10; // you can change (10, 20, 50)
+
+    //     if (index < period) return { ...item, ma: null };
+
+    //     const avg =
+    //         arr.slice(index - period, index)
+    //         .reduce((sum, d) => sum + d.close, 0) / period;
+
+    //     return { ...item, ma: avg };
+    // });
+
+
+    
+    
+    
+    const getInterval = () => {
+        if (range === "30D") return 1;   // show every 5th label
+        if (range === "3M") return 5;
+        if (range === "6M") return 7;
+        if (range === "1Y") return 7;
+        if (range === "5Y") return 7;
+        if (range === "MAX") return 7;
+            
+    };
+
 
     const formatCurrency = (value) => {
         if (value >= 1000000) return `₹${(value / 1000000).toFixed(1)}M`;
@@ -16,10 +45,10 @@ export default function PriceChart({data,}) {
            
 
                      
-                <div style={{ overflowX: "auto", width: "100%" }}>
-                    <div style={{ width: data.length * 6, height: 300 }}>
+                <div >
+                    <div >
                                     
-                        <AreaChart   width={data.length * 100}  height={300} data={data} >
+                        <AreaChart   width={1250}  height={300} data={data} >
 
                                                 
                         {/* Gradient */}
@@ -37,6 +66,7 @@ export default function PriceChart({data,}) {
                             {/* Axes */}
                             
                             <XAxis 
+                                
                                 dataKey="date"
                                 tickFormatter={(date) => 
                                     
@@ -48,19 +78,24 @@ export default function PriceChart({data,}) {
                                     }) 
                                 }
                                     
+                                interval={getInterval()}
                                 tick={{ fontSize: 12, fill: "#6b7280" }}
                                 axisLine={false}
                                 tickLine={false}
+                                padding={{ left: 20 }}
                                     
                                     
                                     />
-                            <YAxis domain={['auto', 'auto']} 
+                            <YAxis domain={['auto', 'auto'] }  
+                                 
                                 tickFormatter={formatCurrency}
                                 tick={{ fontSize: 12, fill: "#6b7280" }}
+                                
                                 axisLine={false}
                                 tickLine={false}
                             />
                             
+
                             {/* Tooltip */}
                             
                             <Tooltip formatter={(value) => `₹ ${value.toFixed(2)}`}/>
@@ -75,9 +110,19 @@ export default function PriceChart({data,}) {
                                     fill="url(#colorPrice)"
                                     strokeWidth={2}
                                     dot={false}
+                                        
+                                    
                                 />
 
-
+                            
+                            {/* <Area
+                                type="monotone"
+                                dataKey="ma"
+                                stroke="#f59e0b"   // orange line
+                                fill="none"
+                                strokeWidth={2}
+                                dot={false}
+                                /> */}
 
 
 
