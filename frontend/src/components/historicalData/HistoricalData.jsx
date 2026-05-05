@@ -104,8 +104,36 @@ export default function HistoricalData({data}) {
 
                  
                  
-                      <div >
+                      <div className="overflow-x-auto">
                       
+                        <PriceChart data={chartData} range={range}/>
+                      
+                       <div className="flex justify-between items-start ml-6">
+                      {/* left */}
+                      <div className="">
+                        
+                          <p className="text-sm text-gray-500 mt-1 uppercase">Daily Returns</p>
+                      </div>
+
+                      {/* Right */}
+
+                      <div className=" text-sm text-gray-500 flex gap-4  justify-between pr-6 pt-4">
+                        
+                        <div className="flex items-center justify-center gap-2 h-5 w-20">
+                          <div className="bg-red-700 w-2.5 h-2.5 rounded-sm "></div>
+                          <span>Posetive</span>
+                        </div>
+                        
+                        <span>Negetive</span>
+                        <span className="text-green-600 font-medium">{((chartData[(chartData.length) - 1]?.return) * 100 ).toFixed(2)} % period </span>
+                        
+                     
+                      </div>
+                    
+                    </div>
+
+
+
                         <PriceChart data={chartData} range={range}/>
                       
                       </div>
