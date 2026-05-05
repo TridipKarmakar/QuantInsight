@@ -5,19 +5,6 @@ import {AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGr
 
 export default function PriceChart({data,range}) {
 
-    // const withMA = data.map((item, index, arr) => {
-    //   const period = 10; // you can change (10, 20, 50)
-
-    //     if (index < period) return { ...item, ma: null };
-
-    //     const avg =
-    //         arr.slice(index - period, index)
-    //         .reduce((sum, d) => sum + d.close, 0) / period;
-
-    //     return { ...item, ma: avg };
-    // });
-
-
     
     
     
@@ -40,15 +27,18 @@ export default function PriceChart({data,range}) {
     if (!data || data.length == 0) return null
 
     return(
-        <div className="h-75 w-full">
+        <div className="pb-3">
 
            
 
                      
                 <div >
                     <div >
-                                    
-                        <AreaChart   width={1250}  height={300} data={data} >
+
+
+                    <ResponsiveContainer width="100%" height={200}>         
+
+                        <AreaChart   data={data} >
 
                                                 
                         {/* Gradient */}
@@ -114,21 +104,15 @@ export default function PriceChart({data,range}) {
                                     
                                 />
 
-                            
-                            {/* <Area
-                                type="monotone"
-                                dataKey="ma"
-                                stroke="#f59e0b"   // orange line
-                                fill="none"
-                                strokeWidth={2}
-                                dot={false}
-                                /> */}
-
+                
 
 
 
 
                         </AreaChart>
+
+
+                    </ResponsiveContainer>
 
                     </div>
                 </div>
