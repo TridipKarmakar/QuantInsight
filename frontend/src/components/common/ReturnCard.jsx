@@ -1,22 +1,18 @@
-import {AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid  } from "recharts"
-
-
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  CartesianGrid,
+  ReferenceLine,
+  Cell
+  
+} from "recharts";
 
 
 export default function ReturnCard({data,range}) {
-
-    // const withMA = data.map((item, index, arr) => {
-    //   const period = 10; // you can change (10, 20, 50)
-
-    //     if (index < period) return { ...item, ma: null };
-
-    //     const avg =
-    //         arr.slice(index - period, index)
-    //         .reduce((sum, d) => sum + d.close, 0) / period;
-
-    //     return { ...item, ma: avg };
-    // });
-
 
     
     
@@ -40,25 +36,18 @@ export default function ReturnCard({data,range}) {
     if (!data || data.length == 0) return null
 
     return(
-        <div className="h-75 w-full">
+        <div className="pb-2">
 
-           
-
-                     
                 <div >
                     <div >
+
+                    <ResponsiveContainer width="100%" height={200}>
+             
                                     
-                        <AreaChart   width={1250}  height={300} data={data} >
-
-                                                
-                        {/* Gradient */}
-                            <defs>
-                                <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor="#2563eb" stopOpacity={0.4}/>
-                                <stop offset="100%" stopColor="#2563eb" stopOpacity={0}/>
-                                </linearGradient>
-                            </defs>
-
+                        <BarChart  data={data} >
+                  
+                     
+         
                             
                         <CartesianGrid strokeDasharray="3 3" vertical={false} />
                             
@@ -86,10 +75,11 @@ export default function ReturnCard({data,range}) {
                                     
                                     
                                     />
+
                             <YAxis domain={['auto', 'auto'] }  
                                  
                                 tickFormatter={formatCurrency}
-                                tick={{ fontSize: 12, fill: "#6b7280" }}
+                                tick={{ fontSize: 12 }}
                                 
                                 axisLine={false}
                                 tickLine={false}
@@ -103,32 +93,24 @@ export default function ReturnCard({data,range}) {
                             
                             {/* Area Line */}
                             
-                            <Area
-                                    type="monotone"
-                                    dataKey="close"
-                                    stroke="#2563eb"
-                                    fill="url(#colorPrice)"
-                                    strokeWidth={2}
-                                    dot={false}
-                                        
+                            <Bar
+                                    dataKey="return" 
+
                                     
-                                />
+                                    >
+                                                        
+                                    {
+                                        data.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={parseFloat(entry.return || 0) >= 0 ? "#22c55e" : "#ef4444"} />
+                                        ))
+                                    }
+                                    
+                                     </Bar>
 
-                            
-                            {/* <Area
-                                type="monotone"
-                                dataKey="ma"
-                                stroke="#f59e0b"   // orange line
-                                fill="none"
-                                strokeWidth={2}
-                                dot={false}
-                                /> */}
+                        
+                        </BarChart>
+                    </ResponsiveContainer>
 
-
-
-
-
-                        </AreaChart>
 
                     </div>
                 </div>
