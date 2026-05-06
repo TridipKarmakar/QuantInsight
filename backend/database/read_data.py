@@ -6,7 +6,7 @@ def get_stock_dataframe(collection, symbol) :
     if not data :
         return None
     
-    historical_data = list(collection.find({"symbol" :symbol }, {"_id":0,"date":1,"close":1,"return":1}).sort("date",1))
+    historical_data = list(collection.find({"symbol" :symbol }, {"_id":0,"date":1,"close":1,"pct_change":1}).sort("date",1))
     
     print(historical_data)
     df = pd.DataFrame(data)
