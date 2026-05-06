@@ -88,13 +88,14 @@ export default function ReturnCard({data,range}) {
 
                             {/* Tooltip */}
                             
-                            <Tooltip formatter={(value) => `₹ ${value.toFixed(2)}`}/>
+                            <Tooltip formatter={(value) => `₹ ${value.toFixed(2)}`} cursor={{ fill: "#FAFAFA" }} />
                             
                             
                             {/* Area Line */}
                             
                             <Bar
                                     dataKey="return" 
+                                    radius={[4, 4, 0, 0]}
 
                                     
                                     >

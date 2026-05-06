@@ -28,11 +28,11 @@ export default function Overview() {
     try {
 
       setLoading(true)
-      
+
 
       const res = await fetch(`https://quantinsight.onrender.com/stock/${symbol}`);
       const json = await res.json();
-      setData(json)      
+      setData(json)
 
     } catch (err) {
       console.error(err)
@@ -43,64 +43,64 @@ export default function Overview() {
   }
 
 
-  return  (
+  return (
 
-    
-      <div className={`min-h-screen bg-gray-50`}> 
+
+    <div className={`min-h-screen bg-gray-50`}>
       <div className={`${loading ? "opacity-50 pointer-events-none" : "opacity-100"} transition-opacity duration-300`} >
         {/*  Left Navbar */}
         <LeftNavbar />
 
         {/*  TOP Navbar */}
-        <TopNavbar className="w-10"  onSearch={fetchData} loading={loading}/>
-            
-          <div className="pl-30 lg:pl-50 pt-10 pr-15 lg:pr-50 space-y-6 bg-gray-50 ">
+        <TopNavbar className="w-10" onSearch={fetchData} loading={loading} />
 
-              {/*  Header */}
-              <HeaderSection data={data} currentSymbol={data?.symbol}/>
-              
-              { !data && (
-                <div className="text-gray-500 text-sm">
-                  Search a stock to see analysis
-                </div>
-              )}
+        <div className="pl-30 lg:pl-50 pt-10 pr-15 lg:pr-50 space-y-6 bg-gray-50 ">
 
-              {/*  Stats */}
-              
-              { data && < StatsSection data={data} />}
-              
-              { data && < PercentileSection data={data} />}
-              
-              { data && < MarketInsightsSection data={data} />}
+          {/*  Header */}
+          <HeaderSection data={data} currentSymbol={data?.symbol} />
 
-              { data && < ProbabilityInsight data={data} />}
-
-              { data && < DistributionInsight data={data} />}
-
-              { data && < HistoricalData data={data} />}
-
-
-
+          {!data && (
+            <div className="text-gray-500 text-sm">
+              Search a stock to see analysis
             </div>
-          </div>
+          )}
+
+          {/*  Stats */}
+
+          {data && < StatsSection data={data} />}
+
+          {data && < PercentileSection data={data} />}
+
+          {data && < MarketInsightsSection data={data} />}
+
+          {data && < ProbabilityInsight data={data} />}
+
+          {data && < DistributionInsight data={data} />}
+
+          {data && < HistoricalData data={data} />}
 
 
-          {loading && (
-          <div className=" fixed inset-0 z-50 flex items-center justify-center ointer-events-none  ">
-            
-            <div className="bg-white px-5 py-3 rounded-xl shadow border flex items-center gap-3">
 
-              <span className="text-sm text-blue-900
-              font-bold">Fetching data </span>
-              
-              <BeatLoader className=" " color="#1F51FF" size={5} />
-
-            </div>
-
-          </div>
-        )}
-
+        </div>
       </div>
-      
+
+
+      {loading && (
+        <div className=" fixed inset-0 z-50 flex items-center justify-center ointer-events-none  ">
+
+          <div className="bg-white px-5 py-3 rounded-xl shadow border flex items-center gap-3">
+
+            <span className="text-sm text-blue-900
+              font-bold">Fetching data </span>
+
+            <BeatLoader className=" " color="#1F51FF" size={5} />
+
+          </div>
+
+        </div>
+      )}
+
+    </div>
+
   )
 }
