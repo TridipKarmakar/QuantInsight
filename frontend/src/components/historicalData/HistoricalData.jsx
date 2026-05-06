@@ -39,7 +39,11 @@ export default function HistoricalData({ data }) {
 
   const chartData = filterData(data.historical_data, range)
 
-  const chartWidth = chartData.length * 4;
+  const periodOpen = chartData[0]?.close;
+  const periodClose = chartData[chartData.length - 1]?.close;
+  const periodReturn = ((periodClose / periodOpen) - 1) * 100;
+
+  const isPositive = periodReturn >= 0
 
 
 
@@ -78,10 +82,10 @@ export default function HistoricalData({ data }) {
 
           {/* Right */}
 
-          <div className="text-sm text-gray-500 flex gap-4 pr-6 pt-4">
+          <div className="text-sm text-blue-500 flex gap-4 p-2   justify-center items-cente  rounded-l-lg shadow-sm">
             <span>Open: ₹{chartData[0]?.close.toFixed(2)}</span>
             <span>Close: ₹{chartData[(chartData.length) - 1]?.close.toFixed(2)}</span>
-            <span className="text-green-600 font-medium">{((chartData[(chartData.length) - 1]?.return) * 100).toFixed(2)} % period </span>
+            <span className={`${isPositive ? "text-green-600" : "text-red-500"}`}>{periodReturn.toFixed(2)} % period </span>
 
 
           </div>
