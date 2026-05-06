@@ -88,7 +88,7 @@ export default function PriceChart({data,range}) {
 
                             {/* Tooltip */}
                             
-                            <Tooltip formatter={(value) => `₹ ${value.toFixed(2)}`}/>
+                            <Tooltip formatter={(value) => [`₹ ${value.toFixed(2)}`,"Closed at"]}/>
                             
                             
                             {/* Area Line */}

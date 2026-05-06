@@ -88,7 +88,7 @@ export default function ReturnCard({data,range}) {
 
                             {/* Tooltip */}
                             
-                            <Tooltip formatter={(value) => `% ${value.toFixed(2)}`} cursor={{ fill: "#FAFAFA" }} />
+                            <Tooltip formatter={(value) => [`${value.toFixed(2)}%`, "Daily Return"]} cursor={{ fill: "#FAFAFA" }} />
                             
                             
                             {/* Area Line */}
@@ -96,7 +96,7 @@ export default function ReturnCard({data,range}) {
                             <Bar
                                     dataKey="pct_change" 
                                     radius={[4, 4, 0, 0]}
-
+                                    
                                     
                                     >
                                                         
