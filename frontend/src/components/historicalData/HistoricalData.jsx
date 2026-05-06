@@ -82,8 +82,8 @@ export default function HistoricalData({ data }) {
 
           {/* Right */}
 
-          <div className="text-sm text-blue-500 flex gap-4 p-2   justify-center items-cente  rounded-l-lg shadow-sm">
-            <span>Open: ₹{chartData[0]?.close.toFixed(2)}</span>
+          <div className="text-sm text-blue-500 flex gap-4 p-2   justify-center items-cente  rounded-l-lg shadow-sm hover:shadow-md">
+            <span>Open:  ₹{chartData[0]?.close.toFixed(2)}</span>
             <span>Close: ₹{chartData[(chartData.length) - 1]?.close.toFixed(2)}</span>
             <span className={`${isPositive ? "text-green-600" : "text-red-500"}`}>{periodReturn.toFixed(2)} % period </span>
 

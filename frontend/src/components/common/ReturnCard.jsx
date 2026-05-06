@@ -31,7 +31,7 @@ export default function ReturnCard({data,range}) {
     const formatCurrency = (value) => {
         if (value >= 1000000) return `₹${(value / 1000000).toFixed(1)}M`;
         if (value >= 1000) return `₹${(value / 1000).toFixed(1)}K`;
-        return `₹${value}`; };
+        return `%${value}`; };
 
     if (!data || data.length == 0) return null
 
@@ -88,13 +88,13 @@ export default function ReturnCard({data,range}) {
 
                             {/* Tooltip */}
                             
-                            <Tooltip formatter={(value) => `₹ ${value.toFixed(2)}`} cursor={{ fill: "#FAFAFA" }} />
+                            <Tooltip formatter={(value) => `% ${value.toFixed(2)}`} cursor={{ fill: "#FAFAFA" }} />
                             
                             
                             {/* Area Line */}
                             
                             <Bar
-                                    dataKey="return" 
+                                    dataKey="pct_change" 
                                     radius={[4, 4, 0, 0]}
 
                                     
@@ -102,7 +102,7 @@ export default function ReturnCard({data,range}) {
                                                         
                                     {
                                         data.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={parseFloat(entry.return || 0) >= 0 ? "#22c55e" : "#ef4444"} />
+                                            <Cell key={`cell-${index}`} fill={parseFloat(entry.pct_change || 0) >= 0 ? "#22c55e" : "#ef4444"} />
                                         ))
                                     }
                                     
