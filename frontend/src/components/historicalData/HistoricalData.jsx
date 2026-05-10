@@ -3,6 +3,8 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import PriceChart from "../common/PriceCard";
 import ReturnCard from "../common/ReturnCard";
+import HistoricalTable from "../common/HistoricalTable"
+
 
 import React, { useState } from 'react';
 
@@ -149,9 +151,12 @@ export default function HistoricalData({ data }) {
 
           </div>
 
-
         </CardContent>
+
       </Card>
+      
+    <HistoricalTable data={chartData} tradingDays={chartData.length} />
+
     </div>
   )
 }
